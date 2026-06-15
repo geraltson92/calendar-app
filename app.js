@@ -5,6 +5,10 @@ const nextBtn = document.getElementById("nextBtn");
 
 let currentDate = new Date();
 
+function getStorageKey(year, month, date) {
+  return `calendar-${year}-${month + 1}-${date}`;
+}
+
 function renderCalendar() {
   calendar.innerHTML = "";
 
@@ -50,7 +54,7 @@ function renderCalendar() {
 
     dayDiv.appendChild(dateText);
 
-    const key = `${year}-${month + 1}-${date}`;
+    const key = getStorageKey(year, month, date);
     const savedEvents = JSON.parse(localStorage.getItem(key)) || [];
 
     savedEvents.forEach(function (eventText, index) {
@@ -63,8 +67,8 @@ function renderCalendar() {
 
         const newText = prompt("일정을 수정하세요", eventText);
 
-        if (newText) {
-          savedEvents[index] = newText;
+        if (newText !== null && newText.trim() !== "") {
+          savedEvents[index] = newText.trim();
           localStorage.setItem(key, JSON.stringify(savedEvents));
           renderCalendar();
         }
@@ -95,8 +99,8 @@ function renderCalendar() {
     dayDiv.addEventListener("click", function () {
       const eventText = prompt(`${year}년 ${month + 1}월 ${date}일 일정 입력`);
 
-      if (eventText) {
-        savedEvents.push(eventText);
+      if (eventText !== null && eventText.trim() !== "") {
+        savedEvents.push(eventText.trim());
         localStorage.setItem(key, JSON.stringify(savedEvents));
         renderCalendar();
       }

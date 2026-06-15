@@ -6,20 +6,37 @@
 
   <title>일정 달력</title>
 
-  <!-- 브라우저 탭 아이콘 -->
-  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
 
-  <!-- iPhone 홈화면 아이콘 -->
-  <link rel="apple-touch-icon" href="/icon.png" />
-
-  <!-- 앱처럼 실행 -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="일정 달력" />
 
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="root"></div>
+  <div class="app">
+    <h1>일정 달력</h1>
 
-  <script type="module" src="/src/main.jsx"></script>
+    <div class="header">
+      <button id="prevBtn">이전 달</button>
+      <h2 id="monthTitle"></h2>
+      <button id="nextBtn">다음 달</button>
+    </div>
+
+    <div class="weekdays">
+      <div class="sun">일</div>
+      <div>월</div>
+      <div>화</div>
+      <div>수</div>
+      <div>목</div>
+      <div>금</div>
+      <div class="sat">토</div>
+    </div>
+
+    <div id="calendar" class="calendar"></div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
