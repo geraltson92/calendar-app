@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.weekdays,
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekdays div {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.day {
+  height: 90px;
+  border: 1px solid #ddd;
+  padding: 6px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.day:hover {
+  background: #eef3ff;
+}
+
+.empty {
+  border: 1px solid transparent;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.event {
+  margin-top: 5px;
+  font-size: 12px;
+  background: #ffeaa7;
+  padding: 3px;
+  border-radius: 4px;
+}
+.today {
+  background: #dff0ff;
+  border: 2px solid #007bff;
+}
+.sunday {
+  color: red;
+}
+
+.saturday {
+  color: blue;
+}
+@media (max-width: 768px) {
+  .app {
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .calendar-header {
+    gap: 8px;
+  }
+
+  .calendar-header h2 {
+    font-size: 20px;
+  }
+
+  button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .day {
+    height: 70px;
+    padding: 4px;
+    font-size: 13px;
+  }
+
+  .event {
+    font-size: 10px;
+    padding: 2px;
+    word-break: break-word;
+  }
+}

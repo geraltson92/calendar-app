@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="일정 달력">
+  <title>일정 달력 앱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>일정 달력</h1>
+
+    <div class="calendar-header">
+      <button id="prevBtn">이전 달</button>
+      <h2 id="monthTitle"></h2>
+      <button id="nextBtn">다음 달</button>
+    </div>
+
+    <div class="weekdays">
+      <div>일</div>
+      <div>월</div>
+      <div>화</div>
+      <div>수</div>
+      <div>목</div>
+      <div>금</div>
+      <div>토</div>
+    </div>
+
+    <div id="calendar" class="calendar"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
